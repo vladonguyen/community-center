@@ -23,7 +23,7 @@ module.exports = {
         hostname: 'secure.gravatar.com', //todo made for test
       },
       {
-        hostname: "bastetkickboxing.com" //todo made for test
+        hostname: "books.ecovege.org" //todo made for test
       },
     
     ],
