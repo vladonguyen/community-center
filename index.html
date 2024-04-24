@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta title of Chitalishte</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/site.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav class="topnav" id="myTopnav">
+            <a href="#home" class="active">Начало</a>
+            <div class="dropdown">
+                <button class="dropbtn">За нас
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">История</a>
+                    <a href="#">Годишен отчет</a>
+                    <a href="#">Контакти</a>
+                    <a href="#">Карта на сайта</a>
+                    <a href="#">Предстоящи събития</a>
+                    <a href="#">Новини</a>
+                </div>
+            </div>
+            <a href="#news">Културен календар</a>
+            <a href="#contact">Галерия</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Дейности
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Библиотека</a>
+                    <a href="#">Италианска читалня</a>
+                    <a href="#">Езиков център</a>
+                    <a href="#">Програма „Аз мога повече”</a>
+                    <a href="#">Музикална школа по пиано</a>
+                    <a href="#">Детска рисувателна школа „Усмивка”</a>
+                    <a href="#">Културен център „Алеко”</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Клубове
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">- Клуб за шевица и народни занаяти „Росица Чуканова-1968”</a>
+                    <a href="#">Клуб „Интериор”</a>
+                    <a href="#">Литературен кръг „Метафора”</a>
+                    <a href="#">Клуб по гражданска журналистика</a>
+                </div>
+            </div>
+            <a href="#about">Академичен народен хор</a>
+            <a href="#about">Проекти</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div style="padding-left:16px">
+
+        </nav>
+    </div>
+
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
