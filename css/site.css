@@ -2,6 +2,7 @@
 @import url(navigation.css);
 @import url(typography.css);
 @import url(header.css);
+@import url(news.css);
 /*todo convert px to em or rem*/
 
 div.wrapper {
@@ -13,7 +14,7 @@ section.about-chitalishte {
     background-color: #F2EBEB;
 }
 
-section.about-chitalishte h1{
+h1, h2{
     text-align: center;
     font-weight: 700;
     color: #8F2D56;
