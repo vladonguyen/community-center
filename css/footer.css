@@ -1,0 +1,23 @@
+footer {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+   
+}
+
+div.footer-columns-wrapper {
+    padding: 20px;
+background-color: #218380;
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 20px;
+}
+
+div.copyright {
+background-color: #8F2D56;
+font-size: 14px;
+text-align: center;
+padding: 20px;
+}
+

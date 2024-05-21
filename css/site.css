@@ -3,6 +3,7 @@
 @import url(typography.css);
 @import url(header.css);
 @import url(news.css);
+@import url(footer.css);
 /*todo convert px to em or rem*/
 
 div.wrapper {
