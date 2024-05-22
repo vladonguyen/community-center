@@ -75,8 +75,8 @@
 
 @media screen and (max-width: 600px) {
 
-    .topnav a:not(:first-child),   .topnav div a:not(:first-child), .topnav div div div a:not(:first-child),
-    .dropdown .dropbtn {
+    /* .topnav a:not(:first-child), */
+    .topnav a, .dropdown .dropbtn {
         display: none;
     }
 
