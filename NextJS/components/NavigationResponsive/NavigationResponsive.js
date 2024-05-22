@@ -1,9 +1,12 @@
 "use client"
+
+import Link from "next/link";
+
 export const NavigationResponsive = () =>{
 
    
 
-  return  <a
+  return  <Link
   href="javascript:void(0);"
   style={{ fontSize: 20 }}
   className="icon"
@@ -19,6 +22,6 @@ export const NavigationResponsive = () =>{
   }}
 >
   ☰
-</a>;
+</Link>;
 }
 
