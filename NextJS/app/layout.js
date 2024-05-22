@@ -28,7 +28,7 @@ export default async function RootLayout({children}){
     return (
         <html lang="en" >
     <body>
-    <div class="wrapper">
+    <div className="wrapper">
         <MainMenu 
         callToActionDestination={data.callToActionDestination}
          callToActionLabel={data.callToActionLabel}

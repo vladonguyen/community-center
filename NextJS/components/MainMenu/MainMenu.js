@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import './mainmenu.css';
-import { responsiveMenu } from 'utils/responsiveMenu';
+import { NavigationResponsive } from 'components/NavigationResponsive';
+// import { responsiveMenu } from 'utils/responsiveMenu';
+
+
 
 export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) => {
     console.log("MAIN MENU: ", items);
+
+  
+
     return (
 
 
@@ -57,14 +63,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
 
 
             </div>
-            <a
-          href="javascript:void(0);"
-          style={{ fontSize: 15 }}
-          className="icon"
-          onclick="{ responsiveMenu } ()"
-        >
-          ☰
-        </a>
+           <NavigationResponsive />
 
     
       </nav>
