@@ -2,6 +2,7 @@ import Link from 'next/link';
 import './mainmenu.css';
 import { NavigationResponsive } from 'components/NavigationResponsive';
 // import { responsiveMenu } from 'utils/responsiveMenu';
+import { FaCaretDown } from 'react-icons/fa';
 
 
 
@@ -31,7 +32,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                          
                                    
                                    
-                                    <Link  href={item.destination}> {item.label}<i className="fa fa-caret-down" /></Link>  
+                                    <Link  href={item.destination}> {item.label} <FaCaretDown className='fa' /></Link>  
             
  
                           
@@ -50,7 +51,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                            <div className="dropdown-content">
                                 {item.subMenuItems.map((subMenuItem) => (
                                     <Link  key={subMenuItem.id} href={subMenuItem.destination} >
-                                            {subMenuItem.label}
+                                            {subMenuItem.label} 
                                     </Link>
                                 ))}
                             </div>
