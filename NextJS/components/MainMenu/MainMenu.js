@@ -7,7 +7,7 @@ import { FaCaretDown } from 'react-icons/fa';
 import './mainmenu.css';
 
 
-
+// TODO responsive menu bug fixes
 export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) => {
     console.log("MAIN MENU: ", items);
 
