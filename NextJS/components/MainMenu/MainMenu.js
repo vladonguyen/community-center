@@ -1,19 +1,22 @@
+"use client";
+
 import Link from 'next/link';
-import './mainmenu.css';
+import { usePathname } from 'next/navigation';
 import { NavigationResponsive } from 'components/NavigationResponsive';
-// import { responsiveMenu } from 'utils/responsiveMenu';
 import { FaCaretDown } from 'react-icons/fa';
+import './mainmenu.css';
 
 
 
 export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) => {
     console.log("MAIN MENU: ", items);
 
+  const pathname = usePathname();
   
 
     return (
 
-
+        
         <nav className="topnav" id="myTopnav">
               <div>
                 {(items || []).map((item) => (
@@ -23,7 +26,8 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                     >
                      
                      {!item.subMenuItems?.length && (<div>
-                            <Link  href={item.destination}>
+                            <Link  href={item.destination}
+                            className={`link ${pathname === item.destination ? 'active' : ''}`}>
                                     {item.label}
                             </Link>
                         </div>)}
