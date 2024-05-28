@@ -11,6 +11,7 @@ import Image from "next/legacy/image";
 import { theme } from "theme";
 import { Gallery } from "components/Gallery";
 import {TickItem} from "components/TickItem";
+import { Introtext } from "components/Introtext";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     return blocks.map((block) => {
@@ -54,6 +55,15 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                 return <FormspreeForm
                     key={block.id}
                     formId={block.attributes.data.form_id}
+                />
+            }
+            case "acf/introtext": {
+                return <Introtext
+                    key={block.id}
+                    title={block.attributes.data.intro_title}
+                    intro_text={block.attributes.data.intro_text}
+                    link_url={block.attributes.data.link_url || "/"}
+
                 />
             }
             case "core/paragraph": {
