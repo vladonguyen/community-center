@@ -33,6 +33,10 @@ export default async function RootLayout({children}){
         callToActionDestination={data.callToActionDestination}
          callToActionLabel={data.callToActionLabel}
           items={data.mainMenuItems} />
+                <header>
+            <div class="header-crop"><img class="header-pano" src="./img/pano-nch1.jpg" alt="" /></div>
+        </header>
+
         {children}
         </div>
     </body>
