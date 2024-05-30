@@ -12,6 +12,7 @@ import { theme } from "theme";
 import { Gallery } from "components/Gallery";
 import {TickItem} from "components/TickItem";
 import { Introtext } from "components/Introtext";
+import { LatestPosts } from "components/LatestPosts";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     return blocks.map((block) => {
@@ -152,6 +153,20 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
 
                 )
             };
+
+            case "core/latest-posts": {
+                return (
+                    <LatestPosts dynamicContent={block.dynamicContent} />
+
+                )
+            };
+            case "core/video": {
+                return (
+                    <div>Please MAKE A VIDEO COMPONENT SO IT DISPLAYS!</div>
+
+                )
+            };
+            
             default:
                 console.log("UNKNOWN: ", block);
                 return null;
