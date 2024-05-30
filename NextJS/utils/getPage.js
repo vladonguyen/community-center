@@ -7,7 +7,14 @@ export const getPage = async (uri) => {
           nodeByUri(uri: $uri) {
             ... on Page {
               blocksJSON
-              
+              blocks {
+                ... on CoreLatestPostsBlock {
+                  dynamicContent
+                }
+                ... on CoreVideoBlock {
+                  originalContent
+                }
+              }
             }
             ... on Property {
               blocksJSON

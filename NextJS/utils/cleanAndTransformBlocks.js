@@ -6,7 +6,7 @@ export const cleanAndTransformBlocks = (blocksJSON) => {
     const deleteKeys = [
         'attributesType',
         'blockType',
-        'dynamicContent',
+        // 'dynamicContent',
         // 'originalContent',
         'saveContent',
         'postId',
