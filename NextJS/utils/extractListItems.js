@@ -8,7 +8,7 @@ export const extractListItems = (htmlString) => {
  const imgRegex = /<img[^>]+src="([^"]+)"[^>]*>/;
  const titleRegex = /<a[^>]+href="[^"]+"[^>]*>([^<]+)<\/a>/;
  const contentRegex = /<div[^>]*class="wp-block-latest-posts__post-excerpt"[^>]*>([^<]+)<\/div>/;
- const hrefRegex = /<a[^>]+href="([^"]+)"[^>]*>/;
+ const hrefRegex = /<a[^>]+href="https:\/\/chitalishte\.ecovege\.org\/([^"]+)"[^>]*>/;
 
  return listItems.map(li => {
      const imageMatch = li.match(imgRegex);
