@@ -10,12 +10,12 @@ export const Introtext = ({
 
   
   return (
-    <section class="about-chitalishte">
+    <section className="about-chitalishte">
     <h1>{title}</h1>
-    <div class="text">
+    <div className="text">
         <p>{ intro_text}</p>
     </div>
-    <div class="learn-more"><Link href= { link_url.url}>Научете повече &gt;&gt;</Link></div>
+    <div className="learn-more"><Link href= { link_url.url}>Научете повече &gt;&gt;</Link></div>
 </section>
 
 

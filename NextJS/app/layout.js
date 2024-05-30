@@ -23,7 +23,7 @@ config.autoAddCss = false;
 
 export default async function RootLayout({children}){
     const data = await getMenu();
-    console.log(data);
+    // console.log(data);
     //here is pages menu navigation loaded
     return (
         <html lang="en" >
@@ -34,7 +34,7 @@ export default async function RootLayout({children}){
          callToActionLabel={data.callToActionLabel}
           items={data.mainMenuItems} />
                 <header>
-            <div class="header-crop"><img class="header-pano" src="./img/pano-nch1.jpg" alt="" /></div>
+            <div className="header-crop"><img className="header-pano" src="./img/pano-nch1.jpg" alt="" /></div>
         </header>
 
         {children}

@@ -10,7 +10,7 @@ import './mainmenu.css';
 export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) => {
     const pathname = usePathname();
 
-    console.log("Current pathname: ", pathname);
+    // console.log("Current pathname: ", pathname);
 
     const normalizePath = (path) => {
         if (!path) return "/";
@@ -51,7 +51,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                                     <div className="dropdown-content">
                                         {item.subMenuItems.map((subMenuItem) => {
                                             const isSubActive = normalizePath(pathname) === normalizePath(subMenuItem.destination);
-                                            console.log(`Checking path: ${normalizePath(pathname)} against sub-item: ${normalizePath(subMenuItem.destination)} - Active: ${isSubActive}`);
+                                            // console.log(`Checking path: ${normalizePath(pathname)} against sub-item: ${normalizePath(subMenuItem.destination)} - Active: ${isSubActive}`);
                                             
                                             return (
                                                 <Link
