@@ -1,11 +1,11 @@
 import { mapMainMenuItems } from "./mapMainMenuItems";
 
-export const getMenu = async () => {
-    const params = {
-        query: `
+export const getMenu = async (variable1, variable2,variable3) => {
+  const params = {
+    query: `
         query Menuquery {    
-          acfOptionsMainMenu {
-            mainMenu {
+          acfOptions${variable1} {
+            mainMenu${variable2} {
               callToActionButton {
                 label
                 destination{
@@ -14,7 +14,7 @@ export const getMenu = async () => {
                   }
                 }   
               }
-              menuItems {
+              menuItems${variable3} {
                 menuItem {
                   destination {
                     ... on Page {
@@ -39,21 +39,38 @@ export const getMenu = async () => {
           
         }
         `
-    };
+  };
 
-    const response = await fetch(process.env.WP_GRAPHQL_URL, {
-        method:"POST",
-        headers: {
-            'Content-Type': "application/json"
-        },
-        body: JSON.stringify(params)
-        });
-        const {data} = await response.json();
+  const response = await fetch(process.env.WP_GRAPHQL_URL, {
+    method: "POST",
+    headers: {
+      'Content-Type': "application/json"
+    },
+    body: JSON.stringify(params)
+  });
+  const { data } = await response.json();
+  console.log("this is data", data);
 
-        return {
-            mainMenuItems: mapMainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems) ,
-            callToActionLabel: data.acfOptionsMainMenu.mainMenu.callToActionButton.label,
-            callToActionDestination: data.acfOptionsMainMenu.mainMenu.callToActionButton.destination.uri
-        };
+  if (variable1 == "MainMenu") {
+    return {
+
+      mainMenuItems: mapMainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems)  }
+  }else if (variable1 == "FooterMenu1") {
+    return {
+
+      mainMenuItems: mapMainMenuItems(data.acfOptionsFooterMenu1.mainMenuFooterMenu1.menuItems1)
+    }
+  }else if (variable1 == "FooterMenu2") {
+    return {
+
+      mainMenuItems: mapMainMenuItems(data.acfOptionsFooterMenu2.mainMenuFooterMenu2.menuItems2)
+    }
+  }else if (variable1 == "FooterMenu3") {
+    return {
+
+      mainMenuItems: mapMainMenuItems(data.acfOptionsFooterMenu3.mainMenuFooterMenu3.menuItems3)
+    }
+  }
+
 
 }
