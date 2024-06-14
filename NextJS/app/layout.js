@@ -1,9 +1,9 @@
-// import {Popins, Aboreto, Poppins} from 'next/font/google';
 import "../styles/globals.css";
 import { getMenu } from 'utils/getMenu';
 import { MainMenu } from 'components/MainMenu';
 import { Footer } from "components/Footer/Footer";
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Header } from "components/Header/Header";
 
 export default async function RootLayout({ children }) {
     const data = await getMenu("MainMenu", "", "");
@@ -20,16 +20,14 @@ export default async function RootLayout({ children }) {
                     <MainMenu
                         items={data.mainMenuItems} />
 
-                    <header>
-                        <div className="header-crop"><img className="header-pano" src="./img/pano-nch1.jpg" alt="" /></div>
-                    </header>
+                    <Header />
 
                     {children}
 
-                    <Footer 
-                    items1={data1.mainMenuItems} 
-                    items2={data2.mainMenuItems}
-                    items3={data3.mainMenuItems}
+                    <Footer
+                        items1={data1.mainMenuItems}
+                        items2={data2.mainMenuItems}
+                        items3={data3.mainMenuItems}
                     />
 
                 </div>
