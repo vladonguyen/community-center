@@ -39,12 +39,15 @@ export const MainMenu = ({ items }) => {
                             <div className="dropdown">
                                 {!!item.subMenuItems?.length && (
                                     <div>
-                                        <Link
+                                         <button class="dropbtn">{item.label} <FaCaretDown className='fa' /> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+                                        {/* <Link
                                             className={isActive ? 'active' : ''}
-                                            href={item.destination}
+                                            href="#"
                                         >
                                             {item.label} <FaCaretDown className='fa' />
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 )}
                                 {!!item.subMenuItems?.length && (
@@ -56,7 +59,7 @@ export const MainMenu = ({ items }) => {
                                             return (
                                                 <Link
                                                     key={subMenuItem.id}
-                                                    className={isSubActive ? 'active' : ''}
+                                                    // className={isSubActive ? 'active' : ''}
                                                     href={subMenuItem.destination}
                                                 >
                                                     {subMenuItem.label}

@@ -41,7 +41,7 @@
 
 .dropdown-content {
     display: none;
-    margin-top: 50px;
+    margin-top: 0px;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -73,7 +73,7 @@
     display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 769px) {
 
     /* .topnav a:not(:first-child), */
     .topnav a, .dropdown .dropbtn {
@@ -86,7 +86,7 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 769px) {
     .topnav.responsive {
         position: relative;
     }

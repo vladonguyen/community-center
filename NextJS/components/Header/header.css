@@ -1,0 +1,34 @@
+/* div.header-crop {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+} */
+div.headerwrap {
+    position: relative;
+}
+
+img.header-pano {
+    width: 100%;
+    top:-50%;
+    display: block; /*removes bottom padding*/
+}
+
+div.logo-in-banner {
+    position: absolute;
+    padding: 40px;
+}
+
+
+img.logo-img-in-banner {
+    height: 80%;
+    width: 80%;
+}
+
+@media screen and (max-width: 769px) {
+    div.logo-in-banner {
+   display: none;
+    }
+    
+   
+}
