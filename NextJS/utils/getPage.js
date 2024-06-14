@@ -1,40 +1,41 @@
 import { cleanAndTransformBlocks } from "./cleanAndTransformBlocks";
 
 export const getPage = async (uri) => {
-    const params = {
-        query: `
-        query PageQuery($uri: String!) {
-          nodeByUri(uri: $uri) {
-            ... on Page {
-              blocksJSON
-              blocks {
-                ... on CoreLatestPostsBlock {
-                  dynamicContent
-                }
-                ... on CoreVideoBlock {
-                  originalContent
-                }
+  const params = {
+    query: `
+      query PageQuery($uri: String!) {
+        nodeByUri(uri: $uri) {
+          ... on Page {
+            blocksJSON
+            blocks {
+              ... on CoreLatestPostsBlock {
+                dynamicContent
+              }
+              ... on CoreVideoBlock {
+                originalContent
               }
             }
-            ... on Property {
-              blocksJSON
-              propertyFeatures {
-                bathrooms
-                bedrooms
-                hasParking
-                petFriendly
-                price
+          }
+          ... on Post {
+            id
+            blocks {
+              ... on CoreLatestPostsBlock {
+                dynamicContent
+              }
+              ... on CoreVideoBlock {
+                originalContent
               }
             }
-            
+            blocksJSON
           }
-          }
-        `,
-        variables: {
-            uri,
+          
         }
-
-    };
+      }
+    `,
+    variables: {
+      uri,
+    },
+  };
 
     const response = await fetch(process.env.WP_GRAPHQL_URL, {
         method: "POST",
@@ -47,6 +48,8 @@ export const getPage = async (uri) => {
     if (!data.nodeByUri) {
         return null;
     }
+
+    console.log("FIND DATA", data, "END DATA")
     const blocks = cleanAndTransformBlocks(data.nodeByUri.blocksJSON);
 
     return {

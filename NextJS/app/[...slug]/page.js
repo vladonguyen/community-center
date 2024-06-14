@@ -6,6 +6,7 @@ import { getSeo } from "utils/getSeo";
 export default async function Page({params}){
     const data = await getPage(params.slug.join("/"));
     
+    
     if(!data){
     notFound();
     }
