@@ -1,0 +1,13 @@
+{
+    "name": "acf/introtext",
+    "title": "Intro text",
+    "description": "A block to render home page intro text",
+    "category": "design",
+    "keywords": ["intro", "intro text", "home"],
+    "icon": "format-aside",
+    "apiVersion": 2,
+    "acf": {
+        "renderTemplate": "./introText.php",
+        "mode": "preview"
+    }
+}
