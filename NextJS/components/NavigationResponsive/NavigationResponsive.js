@@ -8,7 +8,7 @@ export const NavigationResponsive = () =>{
 
   return  <Link
   href="javascript:void(0);"
-  style={{ fontSize: 20 }}
+  style={{ fontSize: 25 }}
   className="icon"
   onClick={()=> {
     let x = document.getElementById("myTopnav");
