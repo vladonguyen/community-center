@@ -7,7 +7,7 @@ import { FaCaretDown } from 'react-icons/fa';
 import './mainmenu.css';
 
 // TODO responsive menu
-export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) => {
+export const MainMenu = ({ items }) => {
     const pathname = usePathname();
 
     // console.log("Current pathname: ", pathname);
