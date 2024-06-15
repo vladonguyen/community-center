@@ -1,27 +1,31 @@
 "use client"
 
-import Link from "next/link";
+import { useState } from 'react';
 
-export const NavigationResponsive = () =>{
+export const NavigationResponsive = () => {
 
-   
-
-  return  <Link
-  href="javascript:void(0);"
-  style={{ fontSize: 25 }}
-  className="icon"
-  onClick={()=> {
+  const handleMenuClick = () => {
     let x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
-        x.className += " responsive";
-        console.log('clicked');
+      x.className += " responsive";
+      // console.log('clicked');
     } else {
-        x.className = "topnav";
-        console.log('no clicked');
+      x.className = "topnav";
+      // console.log('no clicked');
     }
-  }}
->
-  ☰
-</Link>;
-}
+  };
 
+  return (
+    <div>
+      {/* <div className="test-red">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+      </div> */}
+      
+      <button className="icon" onClick={handleMenuClick}>
+        <img className="hamburger-icon" src="./img/menu-burger-horizontal-svgrepo-com.svg" alt="Menu" />
+      </button>
+      </div>
+  );
+}

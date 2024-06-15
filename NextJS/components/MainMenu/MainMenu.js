@@ -19,11 +19,17 @@ export const MainMenu = ({ items }) => {
 
     return (
         <nav className="topnav" id="myTopnav">
+            <div className="wrap-logo-hamburger-icon">
+                <div className="logo-in-nav"><img className="logo-img-in-nav" src="./img/logo-aleko-konstantinov-chitalishte.png" alt="" /></div>
+                <NavigationResponsive />
+            </div>
+
+
             <div>
                 {(items || []).map((item) => {
                     const isActive = normalizePath(pathname) === normalizePath(item.destination);
                     // console.log(`Checking path: ${normalizePath(pathname)} against item: ${normalizePath(item.destination)} - Active: ${isActive}`);
-                    
+
                     return (
                         <div key={item.id}>
                             {!item.subMenuItems?.length && (
@@ -39,9 +45,9 @@ export const MainMenu = ({ items }) => {
                             <div className="dropdown">
                                 {!!item.subMenuItems?.length && (
                                     <div>
-                                         <button className="dropbtn">{item.label} <FaCaretDown className='fa' /> 
-      <i className="fa fa-caret-down"></i>
-    </button>
+                                        <button className="dropbtn">{item.label} <FaCaretDown className='fa' />
+                                            <i className="fa fa-caret-down"></i>
+                                        </button>
                                         {/* <Link
                                             className={isActive ? 'active' : ''}
                                             href="#"
@@ -55,7 +61,7 @@ export const MainMenu = ({ items }) => {
                                         {item.subMenuItems.map((subMenuItem) => {
                                             const isSubActive = normalizePath(pathname) === normalizePath(subMenuItem.destination);
                                             // console.log(`Checking path: ${normalizePath(pathname)} against sub-item: ${normalizePath(subMenuItem.destination)} - Active: ${isSubActive}`);
-                                            
+
                                             return (
                                                 <Link
                                                     key={subMenuItem.id}
@@ -73,7 +79,7 @@ export const MainMenu = ({ items }) => {
                     );
                 })}
             </div>
-            <NavigationResponsive />
+
         </nav>
     );
 };
