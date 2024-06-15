@@ -1,15 +1,16 @@
 "use client";
 
 import Link from 'next/link';
-import { FaCaretDown } from 'react-icons/fa';
 import './mainmenu.css';
+import { v4 as uuid } from "uuid";
+
 
 // TODO responsive menu
 export const FooterMenu = ({ items }) => {
 
     return (
 
-        <div>
+        <div key={uuid()}>
             {(items || []).map((item) => {
              
 
@@ -17,7 +18,7 @@ export const FooterMenu = ({ items }) => {
                     <div key={item.id} className='footerMenuFirstLevel'>
                         {!item.subMenuItems?.length && (
                             <div className='boldTitle'>
-                                <Link 
+                                <Link key={uuid()}
                                    
                                     href={item.destination}
                                 >
@@ -25,10 +26,10 @@ export const FooterMenu = ({ items }) => {
                                 </Link>
                             </div>
                         )}
-                        <div className="dropdownFooter">
+                        <div className="dropdownFooter" key={uuid()}>
                             {!!item.subMenuItems?.length && (
-                                <div className='boldTitle'>
-                                    <Link
+                                <div className='boldTitle' key={uuid()}>
+                                    <Link key={uuid()}
                                        
                                         href={item.destination}
                                     >
@@ -37,12 +38,12 @@ export const FooterMenu = ({ items }) => {
                                 </div>
                             )}
                             {!!item.subMenuItems?.length && (
-                                <div className="dropdown-content-footer">
+                                <div className="dropdown-content-footer" key={uuid()}>
                                     {item.subMenuItems.map((subMenuItem) => {
                                        
                                         return (
-                                            <div>
-                                            <Link
+                                            <div key={uuid()}>
+                                            <Link 
                                                 key={subMenuItem.id}
                                                
                                                 href={subMenuItem.destination}
