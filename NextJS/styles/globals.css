@@ -35,7 +35,8 @@ section.about-chitalishte {
 /*typography css*/
 body {
           
-    font-family: Arial
+    font-family: Arial;
+    background-color: rgb(231, 225, 225);
 }
 
 h1, h2{

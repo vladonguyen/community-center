@@ -27,6 +27,13 @@ div.two-columns {
 gap: 25px;
 }
 
+@media screen and (max-width: 426px) {
+    div.two-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 p.learn-more-link {
     color: #8F2D56;
     font-weight: bold;
@@ -39,4 +46,6 @@ div.thumb-image img {
 div.news-content h3 {
     font-weight: bold;
 }
+
+
 

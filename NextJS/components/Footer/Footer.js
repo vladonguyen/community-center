@@ -8,7 +8,7 @@ export const Footer = ({items1, items2, items3})=> {
     return (
         <footer>
   <div className="footer-columns-wrapper">
-<Address></Address>
+  <Address position="address-desktop" />
     <div className="footer-column">
 <FooterMenu items={items1} />
     </div>
@@ -19,6 +19,7 @@ export const Footer = ({items1, items2, items3})=> {
     <FooterMenu items={items3} />
     </div>
   </div>
+  <Address position="address-mobile" />
   <Copyright></Copyright>
 </footer>
 

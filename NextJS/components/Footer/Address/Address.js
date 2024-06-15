@@ -1,6 +1,6 @@
-export const Address = ()=>{
+export const Address = ({position})=>{
     return (
-        <div className="address">
+        <div className={position}>
         <p>
           <span className="boldTitle">Адрес: </span>
           <br />

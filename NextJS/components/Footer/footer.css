@@ -6,12 +6,36 @@ footer {
    
 }
 
+div.address-mobile {
+    display: none;
+}
+
 div.footer-columns-wrapper {
     padding: 20px;
 background-color: #218380;
 display: grid;
 grid-template-columns: repeat(4, minmax(0, 1fr));
 gap: 20px;
+}
+
+@media screen and (max-width: 426px) {
+    div.footer-columns-wrapper {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    div.address-desktop {
+        display: none;
+    }
+
+    div.address-mobile {
+        display: block;
+        background-color: #FFBC42;
+        color: black;
+        padding: 20px;
+    }
+   
 }
 
 div.copyright {
@@ -27,4 +51,8 @@ padding: 20px;
 
 .footerMenuFirstLevel {
     margin-bottom: 10px;
+}
+/*TODO check whether padding for footer needs to be increase expecially for mobile version*/
+.footer-column div:has(a) {
+    padding-bottom: 6px;
 }
