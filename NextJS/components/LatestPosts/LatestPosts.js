@@ -16,7 +16,7 @@ export const LatestPosts = ({ dynamicContent }) => {
                 <article key={index} className="news-events">
                     <div className="two-columns">
                         <div className="thumb-image">
-                            <img src={item.image} alt={item.altText} />
+                        <Link href={item.href}>   <img src={item.image} alt={item.altText} /></Link>
                         </div>
                         <div className="news-content">
                             <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>
