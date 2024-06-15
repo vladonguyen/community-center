@@ -17,7 +17,6 @@
 .active {
     background-color: rgb(215, 62, 126);
     color: FFBC42;
-    min-height: 66px;
 }
 
 .topnav .icon {
@@ -75,6 +74,9 @@
 }
 
 @media screen and (max-width: 769px) {
+    .active {
+        min-height: 66px;
+    }
 
     /* .topnav a:not(:first-child), */
     .topnav a, .dropdown .dropbtn {

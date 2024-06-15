@@ -40,7 +40,7 @@ export const MainMenu = ({ items }) => {
                                 {!!item.subMenuItems?.length && (
                                     <div>
                                          <button className="dropbtn">{item.label} <FaCaretDown className='fa' /> 
-      <i class="fa fa-caret-down"></i>
+      <i className="fa fa-caret-down"></i>
     </button>
                                         {/* <Link
                                             className={isActive ? 'active' : ''}
