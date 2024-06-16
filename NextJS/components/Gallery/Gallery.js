@@ -20,6 +20,7 @@ export const Gallery = ({columns, cropImages, items}) => {
             style={{width: `${columnWidth}%` }}
              className="p-5 flex-grow"
             >
+                <a target="_blank" href={item.attributes.url} >
                 <Image 
                 src={item.attributes.url} 
                 //CHANGED fixed width and heigth graphql props
@@ -34,7 +35,7 @@ export const Gallery = ({columns, cropImages, items}) => {
                 style={{ width: '100%', height: 'auto' }} // optional
                 alt={item.attributes.alt || ""} 
                 // objectFit="cover"
-                 />
+                 /></a>
             </div>
         ))}
     </div>
