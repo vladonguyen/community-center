@@ -1,0 +1,14 @@
+div.imgContainer {
+    width: 40%;
+  
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img.imgInText {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+}

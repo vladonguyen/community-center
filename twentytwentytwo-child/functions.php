@@ -9,6 +9,30 @@
  * @since Twenty Twenty-Two 1.0
  */
 
+// Add width and height to GraphQL schema for image
+add_action('graphql_register_types', function() {
+    // Register the width field
+    register_graphql_field('MediaItem', 'width', [
+        'type' => 'Int',
+        'description' => __('The width of the image', 'your-textdomain'),
+        'resolve' => function($source, $args, $context, $info) {
+            $image_metadata = wp_get_attachment_metadata($source->databaseId);
+            return isset($image_metadata['width']) ? $image_metadata['width'] : null;
+        }
+    ]);
+
+    // Register the height field
+    register_graphql_field('MediaItem', 'height', [
+        'type' => 'Int',
+        'description' => __('The height of the image', 'your-textdomain'),
+        'resolve' => function($source, $args, $context, $info) {
+            $image_metadata = wp_get_attachment_metadata($source->databaseId);
+            return isset($image_metadata['height']) ? $image_metadata['height'] : null;
+        }
+    ]);
+});
+
+
  add_action('acf/init', 'acf_init_block_types');
  function acf_init_block_types(){
 	add_filter('wp_graphql_blocks_process_attributes', function($attributes, $data, $post_id){

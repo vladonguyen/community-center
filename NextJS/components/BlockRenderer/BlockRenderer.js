@@ -10,9 +10,11 @@ import { PropertyFeatures } from "components/PropertyFeatures";
 import Image from "next/legacy/image";
 import { theme } from "theme";
 import { Gallery } from "components/Gallery";
-import {TickItem} from "components/TickItem";
+import { TickItem } from "components/TickItem";
 import { Introtext } from "components/Introtext";
 import { LatestPosts } from "components/LatestPosts";
+import { getImage } from "utils/getImage";
+import { ImageRender } from "components/ImageRender";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     // console.log("BLOCKS:", blocks)
@@ -140,16 +142,15 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
             };
 
             case "core/image": {
+                const uri = block.attributes.url
+                // const imgData =  getImage(uri);
+                // console.log("IMAGE DATA",imgData);
                 return (
-                    <Image
-                        key={block.id}
-                        src={block.attributes.url}
-                        width={9000}
-                        height={6000}
-                        // sizes="100vw"
-                        // style={{ width: '100%', height: 'auto' }} // optional
-                        alt={block.attributes.alt || ""}
-                        // style={{objectFit: "cover"}}
+
+
+                    <ImageRender keyId={block.id} 
+                    src={block.attributes.url} 
+                    alt={block.attributes.alt || ""} 
                     />
 
                 )
@@ -167,7 +168,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
 
                 )
             };
-            
+
             default:
                 console.log("UNKNOWN: ", block);
                 return null;
