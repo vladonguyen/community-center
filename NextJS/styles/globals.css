@@ -74,3 +74,8 @@ main> h1 {
     text-transform: uppercase;
     
 }
+
+div.postDate {
+    font-style: italic;
+    padding: 10px;
+}
