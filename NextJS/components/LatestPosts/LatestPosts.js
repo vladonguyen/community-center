@@ -1,6 +1,7 @@
 import { extractListItems } from "utils/extractListItems";
 import Link from 'next/link';
 import "./latestposts.css";
+import Image from "next/image";
 
 export const LatestPosts = ({ dynamicContent }) => {
     const listItems = extractListItems(dynamicContent);
@@ -16,7 +17,7 @@ export const LatestPosts = ({ dynamicContent }) => {
                 <article key={index} className="news-events">
                     <div className="two-columns">
                         <div className="thumb-image">
-                        <Link href={item.href}>   <img src={item.image} alt={item.altText} /></Link>
+                        <Link href={item.href}>   <Image src={item.image} alt={item.altText} width={150} height={150}/></Link>
                         </div>
                         <div className="news-content">
                             <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>
