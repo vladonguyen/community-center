@@ -49,7 +49,7 @@ export const getMenu = async (variable1, variable2,variable3) => {
     body: JSON.stringify(params)
   });
   const { data } = await response.json();
-  console.log("this is data", data);
+  // console.log("this is data", data);
 
   if (variable1 == "MainMenu") {
     return {

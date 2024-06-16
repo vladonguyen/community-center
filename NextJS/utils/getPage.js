@@ -49,7 +49,7 @@ export const getPage = async (uri) => {
         return null;
     }
 
-    console.log("FIND DATA", data, "END DATA")
+    // console.log("FIND DATA", data, "END DATA")
     const blocks = cleanAndTransformBlocks(data.nodeByUri.blocksJSON);
 
     return {
