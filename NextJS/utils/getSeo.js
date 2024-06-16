@@ -33,7 +33,7 @@ export const getSeo = async (uri) => {
     });
     const { data } = await response.json();
 
-    console.log("DATA SEO!: ", data)
+    // console.log("DATA SEO!: ", data)
     if (!data.nodeByUri) {
         return null;
     }

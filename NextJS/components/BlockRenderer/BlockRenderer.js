@@ -83,7 +83,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                 return <Heading
                     key={block.id}
                     level={block.attributes.level}
-                    originalContent={block.originalContent}
+                    originalContent={block.dynamicContent}
                     textAlign={block.attributes.textAlign} />
             };
             case "acf/propertysearch": {
@@ -96,7 +96,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                 );
             }
             case "core/columns": {
-                console.log("COLUMNS:", block.attributes)
+                // console.log("COLUMNS:", block.attributes)
                 return (
                     <Columns
                         key={block.id}

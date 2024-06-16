@@ -14,7 +14,7 @@ notFound();
 
 export async function generateMetadata (){
     const seo = await getSeo("/");
-    console.log("SEO!: ", seo)
+    // console.log("SEO!: ", seo)
     return {
         title: seo?.title || "",
         description: seo?.metaDesc || "",

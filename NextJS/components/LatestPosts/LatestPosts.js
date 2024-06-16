@@ -5,7 +5,7 @@ import "./latestposts.css";
 export const LatestPosts = ({ dynamicContent }) => {
     const listItems = extractListItems(dynamicContent);
 
-    console.log("THESE ARE LISTITEM", listItems);
+    // console.log("THESE ARE LISTITEM", listItems);
     
     return (
         <section className="news">
