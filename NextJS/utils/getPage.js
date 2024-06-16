@@ -6,6 +6,8 @@ export const getPage = async (uri) => {
       query PageQuery($uri: String!) {
         nodeByUri(uri: $uri) {
           ... on Page {
+           title
+            date
             blocksJSON
             blocks {
               ... on CoreLatestPostsBlock {
@@ -18,6 +20,8 @@ export const getPage = async (uri) => {
           }
           ... on Post {
             id
+            title
+            date
             blocks {
               ... on CoreLatestPostsBlock {
                 dynamicContent
@@ -51,11 +55,13 @@ export const getPage = async (uri) => {
 
     // console.log("FIND DATA", data, "END DATA")
     const blocks = cleanAndTransformBlocks(data.nodeByUri.blocksJSON);
-
+// console.log("TITLE",data.nodeByUri.title)
     return {
       props: {
                blocks,
         propertyFeatures: data.nodeByUri.propertyFeatures || null,
+        title: data.nodeByUri.title || "",
+        date: data.nodeByUri.date || "",
      
       },
     };

@@ -15,6 +15,7 @@ import { Introtext } from "components/Introtext";
 import { LatestPosts } from "components/LatestPosts";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
+    // console.log("BLOCKS:", blocks)
     return blocks.map((block) => {
         switch (block.name) {
             case "acf/tickitem": {

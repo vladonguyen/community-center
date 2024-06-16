@@ -63,3 +63,14 @@ div.learn-more {
     color: #8F2D56;
     padding: 20px 20px;
 }
+
+main {
+    background-color: #F2EBEB;
+    padding: 20px;
+}
+
+main> h1 {
+    font-size: 25px;
+    text-transform: uppercase;
+    
+}
