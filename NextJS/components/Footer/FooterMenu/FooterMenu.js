@@ -1,7 +1,6 @@
 "use client";
 
 import Link from 'next/link';
-import './mainmenu.css';
 import { v4 as uuid } from "uuid";
 
 

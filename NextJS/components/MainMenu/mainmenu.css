@@ -109,37 +109,31 @@ div.logo-in-nav {
 
 div.wrap-logo-hamburger-icon {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
 
 }
 }
 
 @media screen and (max-width: 769px) {
-    .topnav.responsive {
-        position: relative;
-    }
+  
 
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
+  
 
-    .topnav.responsive a {
+   .topnav.responsive a {
         float: none;
         display: block;
         text-align: left;
-    }
+    } 
 
     .topnav.responsive .dropdown {
         float: none;
     }
 
-    .topnav.responsive .dropdown-content {
+.topnav.responsive .dropdown-content {
         position: relative;
-    }
+    } 
 
-    .topnav.responsive .dropdown .dropbtn {
+   .topnav.responsive .dropdown .dropbtn {
         display: block;
         width: 100%;
         text-align: left;
