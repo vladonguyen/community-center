@@ -1,8 +1,8 @@
 footer {
     color: #FFF;
-    font-size: 14px;
+    font-size: 0.88rem;
     font-weight: 100;
-    line-height: 20px;
+    line-height: 1.25rem;
    
 }
 
@@ -11,17 +11,17 @@ div.address-mobile {
 }
 
 div.footer-columns-wrapper {
-    padding: 20px;
+    padding: 1.25rem;
 background-color: #218380;
 display: grid;
 grid-template-columns: repeat(4, minmax(0, 1fr));
-gap: 20px;
+gap: 1.25rem;
 }
 
 @media screen and (max-width: 426px) {
     div.footer-columns-wrapper {
         display: flex;
-        gap: 20px;
+        gap: 1.25rem;
         flex-direction: column;
     }
 
@@ -33,16 +33,16 @@ gap: 20px;
         display: block;
         background-color: #FFBC42;
         color: black;
-        padding: 20px;
+        padding: 1.25rem;
     }
    
 }
 
 div.copyright {
 background-color: #8F2D56;
-font-size: 14px;
+font-size: 0.88rem;
 text-align: center;
-padding: 20px;
+padding: 1.25rem;
 }
 
 .boldTitle {
@@ -50,9 +50,9 @@ padding: 20px;
 }
 
 .footerMenuFirstLevel {
-    margin-bottom: 10px;
+    margin-bottom: 0.63rem;
 }
 /*TODO check whether padding for footer needs to be increase expecially for mobile version*/
 .footer-column div:has(a) {
-    padding-bottom: 6px;
+    padding-bottom: 0.38rem;
 }

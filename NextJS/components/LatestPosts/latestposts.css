@@ -1,18 +1,18 @@
 section.news {
     background-color: #FFBC42;
-    padding-bottom: 30px;
+    padding-bottom: 1.88rem;
 }
 article.news-events {
     
-    gap:20px;
-    padding: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-    border-bottom: 2px solid #8F2D56;
+    gap:1.25rem;
+    padding: 1.57rem;
+    margin-left: 1.57rem;
+    margin-right: 1.57rem;
+    border-bottom: 0.13rem solid #8F2D56;
 }
 
 article.news-events:after  {
-    border-bottom: 2px solid #8F2D56;
+    border-bottom: 0.13rem solid #8F2D56;
    
 }
 
@@ -20,14 +20,14 @@ div.news-content {
     
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.32rem;
 }
 div.two-columns {
     display: flex;
-gap: 25px;
+gap: 1.57rem;
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 426px)  {
     div.two-columns {
         flex-direction: column;
         align-items: center;
