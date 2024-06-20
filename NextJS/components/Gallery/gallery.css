@@ -1,0 +1,11 @@
+div.galleryColumnWidth {
+    width: 33%;
+}
+
+@media screen and (max-width: 426px) {
+
+    div.galleryColumnWidth {
+        width: 100%;
+    }
+    
+}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "./gallery.css";
 
 export const Gallery = ({columns, cropImages, items}) => {
     let maxHeight = 0;
@@ -17,8 +18,8 @@ export const Gallery = ({columns, cropImages, items}) => {
         {items.map(item => (
             <div 
             key={item.id}
-            style={{width: `${columnWidth}%` }}
-             className="p-5 flex-grow"
+            
+             className="p-5 flex-grow galleryColumnWidth"
             >
                 <a target="_blank" href={item.attributes.url} >
                 <Image 
