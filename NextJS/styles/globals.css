@@ -80,3 +80,12 @@ div.postDate {
     font-style: italic;
     padding: 0.63rem;
 }
+
+main p a {
+    text-decoration: underline;
+    color:#8F2D56
+}
+
+main p a:hover {
+    font-weight: bold;
+}

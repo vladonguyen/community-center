@@ -56,3 +56,7 @@ padding: 1.25rem;
 .footer-column div:has(a) {
     padding-bottom: 0.38rem;
 }
+
+.footer-column a:hover {
+    color:#8F2D56
+}
