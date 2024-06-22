@@ -51,7 +51,7 @@ export const getPage = async (uri) => {
     });
     
     const { data } = await response.json();
-    console.log("GETPAGE", data)
+    // console.log("GETPAGE", data)
     if (!data.nodeByUri) {
         return null;
     }
