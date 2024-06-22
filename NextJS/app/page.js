@@ -2,6 +2,7 @@ import { BlockRenderer } from "components/BlockRenderer";
 import { getPage } from "utils/getPage";
 import { notFound } from "next/navigation";
 import { getSeo } from "utils/getSeo";
+import { getCategoryPosts } from "utils/getCategoryPosts";
 
 // main page tep
 export default async function Home(){
@@ -20,3 +21,5 @@ export async function generateMetadata (){
         description: seo?.metaDesc || "",
     }
 }
+
+getCategoryPosts();
