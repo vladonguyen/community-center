@@ -151,6 +151,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                     <ImageRender keyId={block.id} 
                     src={block.attributes.url} 
                     alt={block.attributes.alt || ""} 
+                    dynamicContent={block.dynamicContent}
                     />
 
                 )

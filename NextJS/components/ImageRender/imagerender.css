@@ -12,3 +12,28 @@ img.imgInText {
     margin-right: auto;
   
 }
+
+@media screen and (min-width: 768px){
+    img.alignleft {
+        float: left;
+        margin-top: 1rem;
+        margin-inline-start: 0;
+        margin-inline-end: 2rem;
+    
+    }
+    
+    img.aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    
+    img.alignright {
+        float: right;
+        margin-inline-start: 0;
+        margin-inline-end: 2rem;
+    
+    }
+}
+
