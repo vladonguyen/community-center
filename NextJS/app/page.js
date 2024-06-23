@@ -21,5 +21,3 @@ export async function generateMetadata (){
         description: seo?.metaDesc || "",
     }
 }
-
-getCategoryPosts();
