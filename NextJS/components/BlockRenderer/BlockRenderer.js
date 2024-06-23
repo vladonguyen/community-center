@@ -17,7 +17,10 @@ import { getImage } from "utils/getImage";
 import { ImageRender } from "components/ImageRender";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
-    // console.log("BLOCKS:", blocks)
+    if(blocks === null){
+        return ("");
+    }
+    console.log("BLOCKS:", blocks)
     return blocks.map((block) => {
         switch (block.name) {
             case "acf/tickitem": {

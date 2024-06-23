@@ -5,6 +5,8 @@ import { getPage } from "utils/getPage"
 import { getSeo } from "utils/getSeo";
 
 import Date from "components/Date/Date";
+import { getCategoryPosts } from "utils/getCategoryPosts";
+import { CategoryPage } from "components/CategoryPage";
 
 
 export default async function Page({ params }) {
@@ -14,7 +16,16 @@ export default async function Page({ params }) {
     if (!data) {
         notFound();
     }
-    console.log("DATA!: ", data, params.slug[0]);
+    // console.log("DATA!: ", data, params.slug[0], params.slug[1], data.props.__typename);
+    //Check whether it is category Events
+
+    let categoryPosts;
+    
+    if (params.slug[0] === "events") {
+        console.log("EVENTS WORKS");
+      categoryPosts = await getCategoryPosts();
+     console.log("categoryPosts", categoryPosts[0].node.featuredImage)
+    }
 
     let isPost = false;
     if (data.props.__typename === "Post") {
@@ -27,6 +38,7 @@ export default async function Page({ params }) {
             }
 
             <BlockRenderer blocks={data.props.blocks} propertyFeaturesProps={data.props.propertyFeatures} />
+            {categoryPosts && (<CategoryPage categoryPosts={categoryPosts}/>)}
         </main>
     )
 

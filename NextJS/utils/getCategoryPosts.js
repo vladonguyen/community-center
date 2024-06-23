@@ -3,20 +3,21 @@ let after = null;
 
 export const getCategoryPosts = async () => {
   const params = {
-    query:`
+    query: `
     query GetEvents($after: String) {
       category(id: "5", idType: DATABASE_ID) {
         name
-        posts(first: 3, after: $after) {
+        posts(first: 15, after: $after) {
           edges {
             node {
               title
               featuredImage {
                 node {
                   sourceUrl
-                  date
+                  altText
                 }
               }
+                date
               slug
             }
             cursor
@@ -25,13 +26,13 @@ export const getCategoryPosts = async () => {
         count
       }
     }
-  `,variables: {
-    after
-  },
+  `, variables: {
+      after
+    },
   };
 
 
-  
+
 
   const response = await fetch(process.env.WP_GRAPHQL_URL, {
     method: 'POST',
@@ -46,14 +47,16 @@ export const getCategoryPosts = async () => {
 
   // Process posts
   posts.forEach(post => {
-    console.log("NODE TITLE", post.node.title);
+    // console.log("NODE TITLE", post.node.title);
   });
 
   // Update the `after` variable for the next request
   if (posts.length > 0) {
     after = posts[posts.length - 1].cursor;
-    console.log("AFTER", after);
+    // console.log("AFTER", after);
   }
+posts.after = after;
+  // console.log("POSTNODE", posts[0])
 
   return posts;
 }
@@ -70,4 +73,3 @@ export const getCategoryPosts = async () => {
 
 
 
-  

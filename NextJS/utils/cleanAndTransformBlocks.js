@@ -1,7 +1,16 @@
 import { v4 as uuid } from "uuid";
 
 export const cleanAndTransformBlocks = (blocksJSON) => {
-    const blocks = JSON.parse(blocksJSON);
+    let blocks;
+    try {
+        blocks = JSON.parse(blocksJSON);
+        if (!blocks) {
+            throw new Error("Parsed JSON is undefined");
+        }
+    } catch (error) {
+        console.error("Custom error parsing JSON (null if blocks is undefined):", error);
+        return null; // Or handle the error appropriately
+    }
 
     const deleteKeys = [
         'attributesType',

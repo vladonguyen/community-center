@@ -35,6 +35,7 @@ export const getPage = async (uri) => {
           }
           
         }
+
       }
     `,
     variables: {
