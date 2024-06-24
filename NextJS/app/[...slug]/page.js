@@ -23,8 +23,11 @@ export default async function Page({ params }) {
     
     if (params.slug[0] === "events") {
         console.log("EVENTS WORKS");
-      categoryPosts = await getCategoryPosts();
-     console.log("categoryPosts", categoryPosts)
+      categoryPosts = await getCategoryPosts(5);
+    //  console.log("categoryPosts", categoryPosts)
+    }else if(params.slug[0] === "news"){
+        categoryPosts = await getCategoryPosts(4);
+
     }
 
     let isPost = false;

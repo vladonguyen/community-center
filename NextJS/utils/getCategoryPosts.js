@@ -1,9 +1,9 @@
 
-export const getCategoryPosts = async (after=null) => {
+export const getCategoryPosts = async (catId, after=null) => {
   const params = {
     query: `
-    query GetEvents($after: String) {
-      category(id: "5", idType: DATABASE_ID) {
+    query GetEvents($catId: ID!, $after: String) {
+      category(id: $catId, idType: DATABASE_ID) {
         name
         posts(first: 10, after: $after) {
           edges {
@@ -25,6 +25,7 @@ export const getCategoryPosts = async (after=null) => {
       }
     }
   `, variables: {
+     catId,
       after
     },
   };
@@ -41,6 +42,7 @@ export const getCategoryPosts = async (after=null) => {
   });
 
   const result = await response.json();
+  console.log("RESULT", result)
   const posts = result.data.category.posts.edges;
 
   // Process posts
