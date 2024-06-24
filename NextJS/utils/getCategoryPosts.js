@@ -1,13 +1,11 @@
 
-let after = null;
-
-export const getCategoryPosts = async () => {
+export const getCategoryPosts = async (after=null) => {
   const params = {
     query: `
     query GetEvents($after: String) {
       category(id: "5", idType: DATABASE_ID) {
         name
-        posts(first: 15, after: $after) {
+        posts(first: 10, after: $after) {
           edges {
             node {
               title

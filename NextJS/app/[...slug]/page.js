@@ -24,7 +24,7 @@ export default async function Page({ params }) {
     if (params.slug[0] === "events") {
         console.log("EVENTS WORKS");
       categoryPosts = await getCategoryPosts();
-     console.log("categoryPosts", categoryPosts[0].node.featuredImage)
+     console.log("categoryPosts", categoryPosts)
     }
 
     let isPost = false;
