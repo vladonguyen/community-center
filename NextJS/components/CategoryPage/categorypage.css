@@ -33,6 +33,12 @@ p.cat-date {
     text-align: center;
 }
 
+h1.cat-name {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    
+}
+
 h2.cat-title {
     font-size: 0.9rem;
 }

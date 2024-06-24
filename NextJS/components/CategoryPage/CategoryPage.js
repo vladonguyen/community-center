@@ -5,8 +5,10 @@ import "./categorypage.css";
 import Date from "components/Date/Date";
 
 export const CategoryPage = ({ categoryPosts }) => {
+    console.log("categoryPosts!:", categoryPosts);
     return (
-    
+    <div>
+        <h1 className="cat-name">{categoryPosts.name}</h1>
       <div className="newsGalleryView">
         {categoryPosts.map((post, index) => (
             <div className="news-item">
@@ -20,6 +22,7 @@ export const CategoryPage = ({ categoryPosts }) => {
           
           </div> </Link> </div>
         ))}
+      </div>
       </div>
     );
   };
