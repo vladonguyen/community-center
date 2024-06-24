@@ -57,6 +57,7 @@ export const getCategoryPosts = async (catId, after=null) => {
   }
 posts.after = after;
 posts.name = result.data.category.name;
+posts.catId = catId;
   // console.log("POSTNODE", posts[0])
 
   return posts;
