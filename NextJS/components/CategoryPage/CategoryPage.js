@@ -11,7 +11,9 @@ export const CategoryPage = ({ categoryPosts }) => {
     console.log("categoryPosts!:", categoryPosts);
     return (
         <div>
-            <h1 className="cat-name">{categoryPosts.name}</h1>
+           {categoryPosts.eventTime==="future" && (<h1 className="cat-name">ПРЕДСТОЯЩИ {categoryPosts.name}</h1>)}
+           {categoryPosts.eventTime==="past" && (<h2 className="cat-name">МИНАЛИ {categoryPosts.name}</h2>)}
+           {categoryPosts.eventTime==="null" && (<h1 className="cat-name">{categoryPosts.name}</h1>)}
             <div className="newsGalleryView">
                 {categoryPosts.map((post, index) => (
                     <div className="news-item">

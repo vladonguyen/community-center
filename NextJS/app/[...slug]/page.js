@@ -11,37 +11,51 @@ import { CategoryPage } from "components/CategoryPage";
 
 export default async function Page({ params }) {
     const data = await getPage(params.slug.join("/"));
-
+    console.log(data)
 
     if (!data) {
         notFound();
     }
-    // console.log("DATA!: ", data, params.slug[0], params.slug[1], data.props.__typename);
+    // console.log("DATA!: ", data);
     //Check whether it is category Events
 
     let categoryPosts;
-    
-    if (params.slug[0] === "events") {
-        console.log("EVENTS WORKS");
-      categoryPosts = await getCategoryPosts(5);
-    //  console.log("categoryPosts", categoryPosts)
-    }else if(params.slug[0] === "news"){
-        categoryPosts = await getCategoryPosts(4);
+    let eventPostsFuture;
+    let eventPostsPast;
+    let categoryID;
 
+    if (params.slug[0] === "news") {
+        categoryID = 4;
+        categoryPosts = await getCategoryPosts(categoryID, null, null);
+
+    } else if (params.slug[0] === "events") {
+        categoryID = 5;
+        eventPostsFuture = await getCategoryPosts(categoryID, null, "future");
+        eventPostsPast = await getCategoryPosts(categoryID, null, "past");
     }
 
     let isPost = false;
     if (data.props.__typename === "Post") {
         isPost = true;
     }
+    console.log("data.props.categoryIdPost: ", data)
     return (
         <main>
             <Title title={data.props.title} />
-            {isPost && (<div className="postDate">Публикувано на: <Date dateString={data.props.date} /> </div>)
-            }
+            {(isPost && data.props.categoryIdPost !== 5) && (
+                <div className="postDate">Публикувано на: <Date dateString={data.props.date} /> </div>
+            )}
+
+            {(isPost && data.props.categoryIdPost == 5) && (
+                <div className="postDate">Дата на събитието: <Date dateString={data.props.date} /> </div>
+            )}
+
 
             <BlockRenderer blocks={data.props.blocks} propertyFeaturesProps={data.props.propertyFeatures} />
-            {categoryPosts && (<CategoryPage categoryPosts={categoryPosts}/>)}
+            {eventPostsFuture && (<CategoryPage categoryPosts={eventPostsFuture} />)}
+            {eventPostsPast && (<CategoryPage categoryPosts={eventPostsPast} />)}
+            {categoryPosts && (<CategoryPage categoryPosts={categoryPosts} />)}
+
         </main>
     )
 

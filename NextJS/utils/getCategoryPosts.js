@@ -1,11 +1,22 @@
 
-export const getCategoryPosts = async (catId, after=null) => {
-  const params = {
-    query: `
-    query GetEvents($catId: ID!, $after: String) {
+export const getCategoryPosts = async (catId, after = null, eventTime = null) => {
+
+  let params;
+
+  const today = new Date();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  const day = today.getDate();
+
+  // if Category is Events and dates is for future event
+  if (catId === 5 && eventTime === "future") {
+
+    params = {
+      query: `
+    query GetEvents($catId: ID!, $after: String, $day: Int!, $month: Int!, $year: Int!) {
       category(id: $catId, idType: DATABASE_ID) {
         name
-        posts(first: 10, after: $after) {
+        posts(first: 10, after: $after,  where: { dateQuery: { after: { day: $day, month: $month, year: $year }}}) {
           edges {
             node {
               title
@@ -25,12 +36,81 @@ export const getCategoryPosts = async (catId, after=null) => {
       }
     }
   `, variables: {
-     catId,
-      after
-    },
-  };
+        catId,
+        after,
+        month,
+        year,
+        day
+      },
+    };
+    // if Category is Events and events are with past date
 
-
+  } else if (catId === 5 && eventTime === "past") {
+    params = {
+      query: `
+    query GetEvents($catId: ID!, $after: String, $day: Int!, $month: Int!, $year: Int!) {
+      category(id: $catId, idType: DATABASE_ID) {
+        name
+        posts(first: 10, after: $after,  where: { dateQuery: { before: { day: $day, month: $month, year: $year }}}) {
+          edges {
+            node {
+              title
+              featuredImage {
+                node {
+                  sourceUrl
+                  altText
+                }
+              }
+                date
+              slug
+            }
+            cursor
+          }
+        }
+        count
+      }
+    }
+  `, variables: {
+        catId,
+        after,
+        month,
+        year,
+        day
+      },
+    };
+  }
+  // other category pages
+  else {
+    params = {
+      query: `
+      query GetEvents($catId: ID!, $after: String) {
+        category(id: $catId, idType: DATABASE_ID) {
+          name
+          posts(first: 10, after: $after, ) {
+            edges {
+              node {
+                title
+                featuredImage {
+                  node {
+                    sourceUrl
+                    altText
+                  }
+                }
+                  date
+                slug
+              }
+              cursor
+            }
+          }
+          count
+        }
+      }
+    `, variables: {
+        catId,
+        after
+      },
+    };
+  }
 
 
   const response = await fetch(process.env.WP_GRAPHQL_URL, {
@@ -42,7 +122,7 @@ export const getCategoryPosts = async (catId, after=null) => {
   });
 
   const result = await response.json();
-  console.log("RESULT", result)
+  // console.log("RESULT", result)
   const posts = result.data.category.posts.edges;
 
   // Process posts
@@ -55,23 +135,11 @@ export const getCategoryPosts = async (catId, after=null) => {
     after = posts[posts.length - 1].cursor;
     // console.log("AFTER", after);
   }
-posts.after = after;
-posts.name = result.data.category.name;
-posts.catId = catId;
+  posts.after = after;
+  posts.name = result.data.category.name;
+  posts.catId = catId;
+  posts.eventTime = eventTime;
   // console.log("POSTNODE", posts[0])
 
   return posts;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

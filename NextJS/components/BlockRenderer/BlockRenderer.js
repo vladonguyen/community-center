@@ -20,7 +20,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     if(blocks === null){
         return ("");
     }
-    console.log("BLOCKS:", blocks)
+    // console.log("BLOCKS:", blocks)
     return blocks.map((block) => {
         switch (block.name) {
             case "acf/tickitem": {

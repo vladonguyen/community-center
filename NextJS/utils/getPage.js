@@ -32,6 +32,13 @@ export const getPage = async (uri) => {
               }
             }
             blocksJSON
+            categories {
+        edges {
+          node {
+            categoryId
+          }
+        }
+      }
           }
           
         }
@@ -43,32 +50,34 @@ export const getPage = async (uri) => {
     },
   };
 
-    const response = await fetch(process.env.WP_GRAPHQL_URL, {
-        method: "POST",
-        headers: {
-            'Content-Type': "application/json"
-        },
-        body: JSON.stringify(params)
-    });
-    
-    const { data } = await response.json();
-    // console.log("GETPAGE", data)
-    if (!data.nodeByUri) {
-        return null;
-    }
+  const response = await fetch(process.env.WP_GRAPHQL_URL, {
+    method: "POST",
+    headers: {
+      'Content-Type': "application/json"
+    },
+    body: JSON.stringify(params)
+  });
 
-    // console.log("FIND DATA", data, "END DATA")
-    const blocks = cleanAndTransformBlocks(data.nodeByUri.blocksJSON);
-// console.log("TITLE",data.nodeByUri.__typename)
-    return {
-      props: {
-               blocks,
-        propertyFeatures: data.nodeByUri.propertyFeatures || null,
-        title: data.nodeByUri.title || "",
-        date: data.nodeByUri.date || "",
-        __typename: data.nodeByUri.__typename
-     
-      },
-    };
+  const { data } = await response.json();
+  // console.log("GETPAGE", data)
+  if (!data.nodeByUri) {
+    return null;
+  }
+
+  // console.log("FIND DATA", data, "END DATA")
+  const blocks = cleanAndTransformBlocks(data.nodeByUri.blocksJSON);
+  const categories = data?.nodeByUri?.categories?.edges?.map(edge => edge.node.categoryId) || [];
+
+  return {
+    props: {
+      blocks,
+      propertyFeatures: data.nodeByUri.propertyFeatures || null,
+      title: data.nodeByUri.title || "",
+      date: data.nodeByUri.date || "",
+      __typename: data.nodeByUri.__typename,
+      categoryIdPost: categories[0],
+
+    },
+  };
 
 }
