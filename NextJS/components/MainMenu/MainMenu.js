@@ -78,6 +78,13 @@ export const MainMenu = ({ items }) => {
                         </div>
                     );
                 })}
+                
+                    <div className='fb-logo'>
+                        <a href="https://www.facebook.com/chitalishte.alekokonstantinov" target="_blank" rel="noopener noreferrer">
+                        <img src='./img/fb.svg' alt="Facebook icon" width={26} height={26} />
+                        </a>
+                    </div>
+               
             </div>
 
         </nav>

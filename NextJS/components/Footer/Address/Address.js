@@ -13,7 +13,13 @@ export const Address = ({position})=>{
           <br />
           <br />
           <br />
-          facebook.com/Alekoplovdiv
+          
+      
+                    <a href="https://www.facebook.com/chitalishte.alekokonstantinov" target="_blank" rel="noopener noreferrer">
+                    <img className="footer-fb-icon" src='./img/fb.svg' alt="Facebook icon" width={26} height={26} />   facebook.com/Alekoplovdiv 
+                        </a>
+                    
+                   
         </p>
       </div>
     )
