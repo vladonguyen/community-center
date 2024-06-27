@@ -1,16 +1,14 @@
 "use client"
 
-import { useState } from 'react';
-
 export const NavigationResponsive = () => {
 
   const handleMenuClick = () => {
     let x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
+    if (x.className === "topnav sticky-nav") {
       x.className += " responsive";
       // console.log('clicked');
     } else {
-      x.className = "topnav";
+      x.className = "topnav sticky-nav";
       // console.log('no clicked');
     }
   };
