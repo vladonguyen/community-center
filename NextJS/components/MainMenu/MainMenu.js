@@ -21,7 +21,7 @@ export const MainMenu = ({ items }) => {
     return (
         <nav className="topnav sticky-nav" id="myTopnav">
             <div className="wrap-logo-hamburger-icon">
-                <div className="logo-in-nav"><img className="logo-img-in-nav" src="./img/logo-aleko-konstantinov-chitalishte.png" alt="" /></div>
+                <div className="logo-in-nav"> <Link href="/" className='logo-link'>  <img className="logo-img-in-nav" src="./img/logo-aleko-konstantinov-chitalishte.png" alt="" /></Link></div>
                 <NavigationResponsive />
             </div>
 

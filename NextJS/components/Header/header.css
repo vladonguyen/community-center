@@ -1,4 +1,8 @@
 
+header {
+    margin-top: 3.384rem;
+}
+
 div.headerwrap {
     position: relative;
 }
@@ -20,9 +24,12 @@ img.logo-img-in-banner {
 }
 
 @media screen and (max-width: 769px) {
+    header {
+        margin-top: 5.826rem;
+    }
+   
     div.logo-in-banner {
    display: none;
     }
     
-   
 }
