@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { NavigationResponsive } from 'components/NavigationResponsive';
 import { FaCaretDown } from 'react-icons/fa';
 import './mainmenu.css';
+import { clickDropDownMenu } from 'utils/clickDropDownMenu';
 
 // TODO responsive menu
 export const MainMenu = ({ items }) => {
@@ -35,6 +36,20 @@ export const MainMenu = ({ items }) => {
                             {!item.subMenuItems?.length && (
                                 <div>
                                     <Link
+                                     onClick={() => {
+                                        try {
+                                            let x = document.getElementById("myTopnav");
+                                            if (x) {
+                                                x.className = "topnav sticky-nav";
+                                            } else {
+                                                console.error("#myTopnav element not found");
+                                                // Optionally handle the case where the element is not found
+                                            }
+                                        } catch (error) {
+                                            console.error("Error while setting class:", error);
+                                            // Optionally handle or log the error
+                                        }
+                                    }}
                                         className={isActive ? 'active' : ''}
                                         href={item.destination}
                                     >
@@ -44,8 +59,10 @@ export const MainMenu = ({ items }) => {
                             )}
                             <div className="dropdown">
                                 {!!item.subMenuItems?.length && (
-                                    <div>
-                                        <button className="dropbtn">{item.label} <FaCaretDown className='fa' />
+                                    <div onClick={clickDropDownMenu}>
+                                        <button className="dropbtn"
+                                        
+                                        >{item.label} <FaCaretDown className='fa' />
                                             <i className="fa fa-caret-down"></i>
                                         </button>
                                         {/* <Link
@@ -64,12 +81,26 @@ export const MainMenu = ({ items }) => {
 
                                             return (
                                                 <Link
-                                                    key={subMenuItem.id}
-                                                    // className={isSubActive ? 'active' : ''}
-                                                    href={subMenuItem.destination || subMenuItem.alternativeUrl}
-                                                >
-                                                    {subMenuItem.label}
-                                                </Link>
+                                                onClick={() => {
+                                                    try {
+                                                        let x = document.getElementById("myTopnav");
+                                                        if (x) {
+                                                            x.className = "topnav sticky-nav";
+                                                        } else {
+                                                            console.error("#myTopnav element not found");
+                                                            // Optionally handle the case where the element is not found
+                                                        }
+                                                    } catch (error) {
+                                                        console.error("Error while setting class:", error);
+                                                        // Optionally handle or log the error
+                                                    }
+                                                }}
+                                                key={subMenuItem.id}
+                                                href={subMenuItem.destination || subMenuItem.alternativeUrl}
+                                            >
+                                                {subMenuItem.label}
+                                            </Link>
+                                            
                                             );
                                         })}
                                     </div>

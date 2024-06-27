@@ -15,11 +15,6 @@ export const NavigationResponsive = () => {
 
   return (
     <div>
-      {/* <div className="test-red">
-        <div class="hamburger"></div>
-        <div class="hamburger"></div>
-        <div class="hamburger"></div>
-      </div> */}
       
       <button className="icon" onClick={handleMenuClick}>
         <img className="hamburger-icon" src="./img/menu-burger-horizontal-svgrepo-com.svg" alt="Menu" />

@@ -84,11 +84,20 @@ div.logo-in-nav {
     color: black;
 }
 
+@media screen and (min-width: 769px) {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+}
 
 @media screen and (max-width: 769px) {
+    .showMenuElement {
+        display: block !important;
+    }
+
+    .hideMenuElement {
+        display: none !important;
+    }
 
     /* .topnav a:not(:first-child), */
     .topnav a,
