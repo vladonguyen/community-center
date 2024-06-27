@@ -45,8 +45,8 @@ export const FooterMenu = ({ items }) => {
                                             <Link 
                                                 key={subMenuItem.id}
                                                
-                                                href={subMenuItem.destination}
-                                            >
+                                                href={subMenuItem.destination || subMenuItem.alternativeUrl}
+                                                >
                                                 {subMenuItem.label}
                                             </Link>
                                             </div>

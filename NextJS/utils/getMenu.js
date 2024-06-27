@@ -1,6 +1,7 @@
 import { mapMainMenuItems } from "./mapMainMenuItems";
 
 export const getMenu = async (variable1, variable2,variable3) => {
+  // console.log("VARIABLES: ", variable1, variable2,variable3)
   const params = {
     query: `
         query Menuquery {    
@@ -24,11 +25,17 @@ export const getMenu = async (variable1, variable2,variable3) => {
                   label
                 }
                 items {
+                alternativeUrl {
+            target
+            title
+            url
+          }
                   destination{
                     ... on Page {
                       uri
                     }
                   }
+                     
                   label
                 }
               }
@@ -52,6 +59,8 @@ export const getMenu = async (variable1, variable2,variable3) => {
   // console.log("this is data", data);
 
   if (variable1 == "MainMenu") {
+    // console.log("NEWCONSOLELOG: ", data.acfOptionsMainMenu.mainMenu.menuItems[1].items[3].alternativeUrl.url);
+    
     return {
 
       mainMenuItems: mapMainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems)  }

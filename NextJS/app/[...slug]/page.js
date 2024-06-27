@@ -11,7 +11,7 @@ import { CategoryPage } from "components/CategoryPage";
 
 export default async function Page({ params }) {
     const data = await getPage(params.slug.join("/"));
-    console.log(data)
+    // console.log(data)
 
     if (!data) {
         notFound();
@@ -38,7 +38,7 @@ export default async function Page({ params }) {
     if (data.props.__typename === "Post") {
         isPost = true;
     }
-    console.log("data.props.categoryIdPost: ", data)
+    // console.log("data.props.categoryIdPost: ", data)
     return (
         <main>
             <Title title={data.props.title} />

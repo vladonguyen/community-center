@@ -66,7 +66,7 @@ export const MainMenu = ({ items }) => {
                                                 <Link
                                                     key={subMenuItem.id}
                                                     // className={isSubActive ? 'active' : ''}
-                                                    href={subMenuItem.destination}
+                                                    href={subMenuItem.destination || subMenuItem.alternativeUrl}
                                                 >
                                                     {subMenuItem.label}
                                                 </Link>

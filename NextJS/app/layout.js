@@ -10,7 +10,7 @@ export default async function RootLayout({ children }) {
     const data1 = await getMenu("FooterMenu1", "FooterMenu1", "1"); // footer 1 menu
     const data2 = await getMenu("FooterMenu2", "FooterMenu2", "2"); // footer 2 menu
     const data3 = await getMenu("FooterMenu3", "FooterMenu3", "3"); // footer 3 menu
-    // console.log(data);
+    // console.log("DATAMAINMENU!!!", data.mainMenuItems[1]);
     //here is pages menu navigation loaded
     //TODO UX, responsiveness, margin, padding between text
     return (

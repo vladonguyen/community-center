@@ -84,8 +84,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                 />
             }
 
-            case "core/post-title":
-            case "core/heading": {
+            case "core/post-title":{
                 return <Heading
                     key={block.id}
                     level={block.attributes.level}
