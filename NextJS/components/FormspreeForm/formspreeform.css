@@ -1,0 +1,68 @@
+form.contact-form {
+    padding: 3.5rem;
+    --tw-border-opacity: 1;
+    border-color: rgb(51 65 85/var(--tw-border-opacity));
+    border-width: 1px;
+    max-width: 64rem;
+    min-width: max-content;
+    min-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+    width: fit-content;
+}
+
+@media screen and (min-width:769px) {
+    form.contact-form {
+        width: 70%;
+    }
+}
+label.label-contact {
+    font-weight: 700;
+    display: block;
+}
+
+input.input-contact,
+textarea.textarea-contact {
+    border: 2px solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(148 163 184 / var(--tw-border-opacity));
+
+    border-radius: 0.25rem;
+
+
+}
+
+input#name {
+    width: 80%;
+}
+
+input#email {
+    width: 80%;
+}
+
+textarea#message {
+    width: 100%;
+    min-height: 7rem;
+}
+
+button.btn-contact {
+
+    margin: 1rem auto auto auto;
+    display: block;
+    cursor: pointer;
+    border-radius: .375rem;
+    --tw-bg-opacity: 1;
+    background-color: #8F2D56;
+    padding: .5rem 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/var(--tw-text-opacity));
+
+}
+
+button.btn-contact:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(190 24 93/var(--tw-bg-opacity));
+}
