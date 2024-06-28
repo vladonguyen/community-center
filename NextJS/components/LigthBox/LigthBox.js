@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import FsLightbox from "fslightbox-react";
 
-function App({imagesSrc, item, index}) {
+function LigthBox({imagesSrc, item, index}) {
     const [lightboxController, setLightboxController] = useState({
 		toggler: false,
 		slide: 1
@@ -19,14 +19,17 @@ function App({imagesSrc, item, index}) {
 	return (
 		<>
 			<button onClick={() => openLightboxOnSlide(index+1)}>
-            <Image 
-                src={item.attributes.url} 
-                height={0}
-                width={0}
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }} // optional
-                alt={item.attributes.alt || ""} 
-                 />
+            <div
+			className="gallery-images"
+			//  style={{ width: 150, height: 150, position: 'relative '}}
+			 >
+                    <Image 
+                        src={item.attributes.url} 
+                        layout="fill"
+                        objectFit="cover"
+                        alt={item.attributes.alt || ""} 
+                    />
+                </div>
                 
 			</button>
 			
@@ -40,4 +43,4 @@ function App({imagesSrc, item, index}) {
 		</>
 	);
 }
-export default App;
+export default LigthBox;

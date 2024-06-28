@@ -1,11 +1,22 @@
-div.galleryColumnWidth {
-    width: 33%;
+    div.gallery-images {
+        width: 250px;
+        height: 250px;
+        position: relative;
+    }
+
+
+@media screen and (max-width: 1023px) {
+    div.gallery-images {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
 }
 
-@media screen and (max-width: 426px) {
-
-    div.galleryColumnWidth {
-        width: 100%;
+@media screen and (max-width: 768px) {
+    div.gallery-images {
+        width: 150px;
+        height: 150px;
+        position: relative;
     }
-    
 }

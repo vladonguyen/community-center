@@ -1,5 +1,5 @@
 import "./gallery.css";
-import App from "components/App/App";
+import LigthBox from "components/LigthBox/LigthBox";
 
 export const Gallery = ({columns, cropImages, items}) => {
     let maxHeight = 0;
@@ -13,7 +13,6 @@ export const Gallery = ({columns, cropImages, items}) => {
             
         });
     }
-    const columnWidth = 100/columns;
 
     const imagesSrc =items.map(item => item.attributes.url);
     console.log("imagesSrc!!!", imagesSrc)
@@ -23,9 +22,9 @@ export const Gallery = ({columns, cropImages, items}) => {
             <div 
             key={item.id}
             
-             className="p-5 flex-grow galleryColumnWidth"
+             className="p-5 flex-grow"
             >
-                <App imagesSrc={imagesSrc} item={item} index={index}/>
+                <LigthBox imagesSrc={imagesSrc} item={item} index={index}/>
             </div>
         ))}
 
