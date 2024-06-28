@@ -1,7 +1,7 @@
-import Image from "next/image";
 import "./gallery.css";
+import App from "components/App/App";
 
-export const Gallery = ({columns, cropImages, items}) => {
+export const Gallery = ({cropImages, items}) => {
     let maxHeight = 0;
     let maxWidth = 0;
     if(cropImages){
@@ -13,31 +13,20 @@ export const Gallery = ({columns, cropImages, items}) => {
             
         });
     }
-    const columnWidth = 100/columns;
+
+    const imagesSrc =items.map(item => item.attributes.url);
+    console.log("imagesSrc!!!", imagesSrc)
     return <div className="flex flex-wrap max-w-5xl mx-auto">
-        {items.map(item => (
+     
+        {items.map((item, index) => (
             <div 
             key={item.id}
             
              className="p-5 flex-grow galleryColumnWidth"
             >
-                <a target="_blank" href={item.attributes.url} >
-                <Image 
-                src={item.attributes.url} 
-                //CHANGED fixed width and heigth graphql props
-                //old code here
-                // height={maxHeight || item.attributes.height}
-                // width={maxWidth || item.attributes.width} 
-                // height={100}
-                // width={100} 
-                height={0}
-                width={0}
-                sizes="100vw"
-                style={{ width: '100%', height: 'auto' }} // optional
-                alt={item.attributes.alt || ""} 
-                // objectFit="cover"
-                 /></a>
+                <App imagesSrc={imagesSrc} item={item} index={index}/>
             </div>
         ))}
+
     </div>
 }
