@@ -1,7 +1,7 @@
 import "./gallery.css";
 import App from "components/App/App";
 
-export const Gallery = ({cropImages, items}) => {
+export const Gallery = ({columns, cropImages, items}) => {
     let maxHeight = 0;
     let maxWidth = 0;
     if(cropImages){
@@ -13,6 +13,7 @@ export const Gallery = ({cropImages, items}) => {
             
         });
     }
+    const columnWidth = 100/columns;
 
     const imagesSrc =items.map(item => item.attributes.url);
     console.log("imagesSrc!!!", imagesSrc)
