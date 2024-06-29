@@ -26,19 +26,19 @@ export const getImage = async (uri) => {
       });
   
       if (!response.ok) {
-        console.error('Network response was not ok', response);
+        // console.error('Network response was not ok', response);
         return null;
       }
   
       const result = await response.json();
   
       if (result.errors) {
-        console.error('GraphQL errors:', result.errors);
+        // console.error('GraphQL errors:', result.errors);
         return null;
       }
   
       const { data } = result;
-      console.log("FIND DATA", data, "END DATA");
+      // console.log("FIND DATA", data, "END DATA");
   
       if (!data || !data.mediaItem) {
         console.warn('No media item found');

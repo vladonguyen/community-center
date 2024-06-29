@@ -15,6 +15,7 @@ import { Introtext } from "components/Introtext";
 import { LatestPosts } from "components/LatestPosts";
 import { getImage } from "utils/getImage";
 import { ImageRender } from "components/ImageRender";
+import Video from "components/Video/Video";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     if(blocks === null){
@@ -170,6 +171,13 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                     <div>Please MAKE A VIDEO COMPONENT SO IT DISPLAYS!</div>
 
                 )
+            };
+            case "core/embed": {
+                const youtubeUrl = block.attributes.url
+              
+                    return <Video youtubeUrl={youtubeUrl} />;
+                    
+
             };
 
             default:
