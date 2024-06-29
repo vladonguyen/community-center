@@ -1,24 +1,28 @@
-"use client"
+"use client";
 
 export const NavigationResponsive = () => {
 
   const handleMenuClick = () => {
     let x = document.getElementById("myTopnav");
     if (x.className === "topnav sticky-nav") {
+      let getAllShowMenuElements = document.querySelectorAll(".showMenuElement") || null;
+      if (getAllShowMenuElements) {
+        getAllShowMenuElements.forEach(element => {
+          element.classList.remove("showMenuElement");
+        });
+      }
+      console.log("getAllShowMenuElements", getAllShowMenuElements);
       x.className += " responsive";
-      // console.log('clicked');
     } else {
       x.className = "topnav sticky-nav";
-      // console.log('no clicked');
     }
   };
 
   return (
     <div>
-      
       <button className="icon" onClick={handleMenuClick}>
         <img className="hamburger-icon" src="./img/menu-burger-horizontal-svgrepo-com.svg" alt="Menu" />
       </button>
-      </div>
+    </div>
   );
-}
+};
