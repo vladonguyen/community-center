@@ -89,3 +89,7 @@ main p a {
 main p a:hover {
     font-weight: bold;
 }
+
+div.loading-icon {
+
+}
