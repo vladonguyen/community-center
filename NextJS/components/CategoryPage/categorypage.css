@@ -20,9 +20,11 @@ div.newsGalleryView {
         display: grid;
         grid-template-columns: 100%;
         padding: 1rem;
-        
+
     }
-    div.newsImgBox, div.text-date {
+
+    div.newsImgBox,
+    div.text-date {
         margin: auto;
     }
 }
@@ -32,8 +34,9 @@ div.news-item {
     flex-direction: column;
     padding: 1rem;
     margin: 1rem;
-   
+
 }
+
 div.newsImgBox {
     width: 250px;
     height: 250px;
@@ -83,5 +86,11 @@ h2.cat-title {
 }
 
 h2.cat-title:hover {
-text-decoration: underline;
+    text-decoration: underline;
+}
+
+div.no-events {
+    text-align: center;
+    margin: auto;
+    width: 50%;
 }

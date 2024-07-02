@@ -8,12 +8,15 @@ import { getCategoryPosts } from "utils/getCategoryPosts";
 
 
 export const CategoryPage = ({ categoryPosts }) => {
-    console.log("categoryPosts!:", categoryPosts);
+    console.log("categoryPosts!:", categoryPosts[0]);
     return (
         <div>
             {categoryPosts.eventTime === "future" && (<h1 className="cat-name">ПРЕДСТОЯЩИ {categoryPosts.name}</h1>)}
             {categoryPosts.eventTime === "past" && (<h2 className="cat-name">МИНАЛИ {categoryPosts.name}</h2>)}
             {categoryPosts.eventTime === "null" && (<h1 className="cat-name">{categoryPosts.name}</h1>)}
+
+            {(categoryPosts[0]===undefined) && (<div className="no-events">В момента няма предстоящи събития!</div>)}
+            
             <div className="newsGalleryView">
                 {categoryPosts.map((post, index) => (
                     <div className="news-item">
@@ -32,6 +35,7 @@ export const CategoryPage = ({ categoryPosts }) => {
 
                         </Link> </div>
                 ))}
+
             </div>
             {/* <div className="nextPage"
             //   onClick={getCategoryPosts(categoryPosts.catId,categoryPosts.after)}
