@@ -72,7 +72,7 @@ export async function generateMetadata({ params }) {
             url: seo?.opengraphUrl,
             images: [
               {
-                url: seo?.opengraphImage.mediaItemUrl , // Must be an absolute URL
+                url: seo?.opengraphImage?.mediaItemUrl , // Must be an absolute URL
               },
               {
                 url: 'https://chitalishte.ecovege.org/wp-content/uploads/2024/06/chitalishte-aleko-konstantinov_800px-wide.jpg', // Must be an absolute URL
