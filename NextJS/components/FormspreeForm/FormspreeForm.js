@@ -11,16 +11,16 @@ export const FormspreeForm = ({ formId }) => {
   }
   return (
     <form onSubmit={handleSubmit} className="contact-form">
-<label for="name" className="label-contact">Име</label>
+<label htmlFor="name" className="label-contact">Име</label>
       <Input id="name" type="name" name="name"  className="input-contact name" />
       <ValidationError prefix="Name" field="name" errors={state.errors} />
 
 
-<label for="email" className="block font-bold">Email</label>
+<label htmlFor="email" className="block font-bold">Email</label>
       <Input id="email" type="email" name="email" className="input-contact email" />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
       
-      <label for="message" className="block mt-5 font-bold">Съобщение:</label>
+      <label htmlFor="message" className="block mt-5 font-bold">Съобщение:</label>
       <textarea
        className="textarea-contact message"
         id="message"
