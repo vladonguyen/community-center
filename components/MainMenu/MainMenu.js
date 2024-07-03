@@ -7,6 +7,7 @@ import { FaCaretDown } from 'react-icons/fa';
 import './mainmenu.css';
 import { clickDropDownMenu } from 'utils/clickDropDownMenu';
 import { useCallback } from 'react';
+import Image from 'next/image';
 
 const normalizePath = (path) => {
     if (!path) return "/";
@@ -71,7 +72,7 @@ export const MainMenu = ({ items = [] }) => {
             <div className="wrap-logo-hamburger-icon">
                 <div className="logo-in-nav">
                     <Link href="/" className="logo-link">
-                        <img className="logo-img-in-nav" src="./img/logo-aleko-konstantinov-chitalishte.png" alt="Logo" />
+                        <Image className="logo-img-in-nav" src="/img/logo-aleko-konstantinov-chitalishte.png" alt="Logo" width={77} height={83}/>
                     </Link>
                 </div>
                 <NavigationResponsive />
@@ -91,7 +92,7 @@ export const MainMenu = ({ items = [] }) => {
                 })}
                 <div className='fb-logo'>
                     <a href="https://www.facebook.com/chitalishte.alekokonstantinov" target="_blank" rel="noopener noreferrer">
-                        <img src='./img/fb.svg' alt="Facebook icon" width={26} height={26} />
+                        <Image src='/img/fb.svg' alt="Facebook icon" width={26} height={26} />
                     </a>
                 </div>
             </div>

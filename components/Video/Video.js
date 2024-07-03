@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import FsLightbox from "fslightbox-react";
 
 import "./video.css";
+import Image from "next/image";
 
 function Video({ youtubeUrl }) {
     const [toggler, setToggler] = useState(false);
@@ -29,9 +30,9 @@ function Video({ youtubeUrl }) {
 			{imageUrl && (
 				
                 <div className="thumbnail-wrapper" onClick={() => setToggler(true)}>
-                    <img src={imageUrl} alt="YouTube Thumbnail" className="thumbnail-image" />
+                    <Image src={imageUrl} alt="YouTube Thumbnail" className="thumbnail-image" width={480} height={360}/>
                     <div className="play-button">
-                        <img src="./img/youtube-play-button.svg" alt="Play Button" />
+                        <Image src="/img/youtube-play-button.svg" alt="Play Button"  width={50} height={50}/>
                     </div>
                 </div>
 				

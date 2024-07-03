@@ -5,8 +5,7 @@ export const Copyright = ()=>{
     return (
         <div className="copyright">
     <p>
-      © {year} НЧ "А.Константинов - 1954" - Пловдив
-      <br />
+    &copy; {year} НЧ &quot;А.Константинов - 1954&quot; - Пловдив<br />
       Уеб дизайн:
       Vladimir Nguyen
     </p>

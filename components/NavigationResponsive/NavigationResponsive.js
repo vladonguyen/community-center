@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export const NavigationResponsive = () => {
 
   const handleMenuClick = () => {
@@ -20,7 +22,7 @@ export const NavigationResponsive = () => {
   return (
     <div>
       <button className="icon" onClick={handleMenuClick}>
-        <img className="hamburger-icon" src="./img/menu-burger-horizontal-svgrepo-com.svg" alt="Menu" />
+        <Image className="hamburger-icon" src="./img/menu-burger-horizontal-svgrepo-com.svg" alt="Menu" width={66} height={80} />
       </button>
     </div>
   );

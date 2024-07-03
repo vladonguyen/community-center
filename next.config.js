@@ -6,6 +6,9 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: process.env.WP_IMAGES_URL,
+      }, {
+        protocol: 'https',
+        hostname: process.env.YOUTUBE_IMAGES_URL,
       },
     ],
   },

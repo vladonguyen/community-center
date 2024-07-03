@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import "./categorypage.css";
 import Date from "components/Date/Date";
-import { getCategoryPosts } from "utils/getCategoryPosts";
+import { v4 as uuid } from "uuid";
+
 
 
 
@@ -19,7 +20,7 @@ export const CategoryPage = ({ categoryPosts }) => {
             
             <div className="newsGalleryView">
                 {categoryPosts.map((post, index) => (
-                    <div className="news-item">
+                    <div className="news-item" key={uuid()}>
                         <Link href={`/${post.node.slug}`}>
 
                             <div key={index} className="newsImgBox">

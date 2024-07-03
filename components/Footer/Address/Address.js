@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export const Address = ({position})=>{
     return (
         <div className={position}>
@@ -16,7 +18,7 @@ export const Address = ({position})=>{
           
       
                     <a href="https://www.facebook.com/chitalishte.alekokonstantinov" target="_blank" rel="noopener noreferrer">
-                    <img className="footer-fb-icon" src='./img/fb.svg' alt="Facebook icon" width={26} height={26} />   facebook.com/Alekoplovdiv 
+                    <Image className="footer-fb-icon" src='./img/fb.svg' alt="Facebook icon" width={26} height={26} />   facebook.com/Alekoplovdiv 
                         </a>
                     
                    
