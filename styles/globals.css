@@ -61,9 +61,19 @@ padding: 0rem 1.25rem;
 }
 
 div.learn-more {
+    font-size: 1.05rem;
     font-weight: 700;
     color: #8F2D56;
     padding: 1.25rem 1.25rem;
+    
+}
+@media screen and (max-width: 426px){
+    div.learn-more {
+        font-size: 1.25rem;
+    }
+}
+p.learn-more-link {
+    font-size: 1.25rem;
 }
 
 main {
