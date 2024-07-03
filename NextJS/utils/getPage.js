@@ -59,12 +59,10 @@ export const getPage = async (uri) => {
   });
 
   const { data } = await response.json();
-  // console.log("GETPAGE", data)
   if (!data.nodeByUri) {
     return null;
   }
 
-  // console.log("FIND DATA", data, "END DATA")
   const blocks = cleanAndTransformBlocks(data.nodeByUri.blocksJSON);
   const categories = data?.nodeByUri?.categories?.edges?.map(edge => edge.node.categoryId) || [];
 

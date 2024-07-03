@@ -8,7 +8,7 @@ import { getCategoryPosts } from "utils/getCategoryPosts";
 
 
 export const CategoryPage = ({ categoryPosts }) => {
-    console.log("categoryPosts!:", categoryPosts[0]);
+    
     return (
         <div>
             {categoryPosts.eventTime === "future" && (<h1 className="cat-name">ПРЕДСТОЯЩИ {categoryPosts.name}</h1>)}

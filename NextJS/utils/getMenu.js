@@ -1,7 +1,6 @@
 import { mapMainMenuItems } from "./mapMainMenuItems";
 
-export const getMenu = async (variable1, variable2,variable3) => {
-  // console.log("VARIABLES: ", variable1, variable2,variable3)
+export const getMenu = async (variable1, variable2, variable3) => {
   const params = {
     query: `
         query Menuquery {    
@@ -56,25 +55,24 @@ export const getMenu = async (variable1, variable2,variable3) => {
     body: JSON.stringify(params)
   });
   const { data } = await response.json();
-  // console.log("this is data", data);
 
   if (variable1 == "MainMenu") {
-    // console.log("NEWCONSOLELOG: ", data.acfOptionsMainMenu.mainMenu.menuItems[1].items[3].alternativeUrl.url);
-    
+
     return {
 
-      mainMenuItems: mapMainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems)  }
-  }else if (variable1 == "FooterMenu1") {
+      mainMenuItems: mapMainMenuItems(data.acfOptionsMainMenu.mainMenu.menuItems)
+    }
+  } else if (variable1 == "FooterMenu1") {
     return {
 
       mainMenuItems: mapMainMenuItems(data.acfOptionsFooterMenu1.mainMenuFooterMenu1.menuItems1)
     }
-  }else if (variable1 == "FooterMenu2") {
+  } else if (variable1 == "FooterMenu2") {
     return {
 
       mainMenuItems: mapMainMenuItems(data.acfOptionsFooterMenu2.mainMenuFooterMenu2.menuItems2)
     }
-  }else if (variable1 == "FooterMenu3") {
+  } else if (variable1 == "FooterMenu3") {
     return {
 
       mainMenuItems: mapMainMenuItems(data.acfOptionsFooterMenu3.mainMenuFooterMenu3.menuItems3)

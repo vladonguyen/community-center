@@ -21,7 +21,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     if(blocks === null){
         return ("");
     }
-    // console.log("BLOCKS:", blocks)
+
     return blocks.map((block) => {
         switch (block.name) {
             case "acf/tickitem": {
@@ -102,8 +102,7 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                 );
             }
             case "core/columns": {
-                // console.log("COLUMNS:", block.attributes)
-                return (
+                 return (
                     <Columns
                         key={block.id}
                         isStackedOnMobile={block.attributes.isStackedOnMobile}
@@ -146,8 +145,6 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
 
             case "core/image": {
                 const uri = block.attributes.url
-                // const imgData =  getImage(uri);
-                // console.log("IMAGE DATA",imgData);
                 return (
 
 

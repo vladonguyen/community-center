@@ -47,11 +47,9 @@ export const PropertySearch = () => {
       window.location.search
     );
 
-     router.push(
-      `${pathname}?page=${pageNumber}&petFriendly=${
-        petFriendly === "true"
-      }&hasParking=${
-        hasParking === "true"
+    router.push(
+      `${pathname}?page=${pageNumber}&petFriendly=${petFriendly === "true"
+      }&hasParking=${hasParking === "true"
       }&minPrice=${minPrice}&maxPrice=${maxPrice}`,
       // null,
     );
@@ -69,8 +67,8 @@ export const PropertySearch = () => {
   }) => {
     // update our browser url
     // search
-    console.log("FILTERS: ", petFriendly, hasParking, minPrice, maxPrice);
-     router.push(
+
+    router.push(
       `${pathname}?page=1&petFriendly=${!!petFriendly}&hasParking=${!!hasParking}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
     );
   };

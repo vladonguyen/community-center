@@ -1,5 +1,4 @@
 export const Columns = ({isStackedOnMobile, children, textColor, backgroundColor }) => {
-  // console.log("backgroundColor:::", backgroundColor)
     const textColorStyle = textColor ? {color: textColor} : {};
     const backgroundColorStyle = backgroundColor ? {backgroundColor } : {};
   

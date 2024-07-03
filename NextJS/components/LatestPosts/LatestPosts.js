@@ -5,8 +5,6 @@ import Image from "next/image";
 
 export const LatestPosts = ({ dynamicContent }) => {
     const listItems = extractListItems(dynamicContent);
-
-    // console.log("THESE ARE LISTITEM", listItems);
     
     return (
         <section className="news">

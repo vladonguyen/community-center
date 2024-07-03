@@ -11,7 +11,6 @@ export const NavigationResponsive = () => {
           element.classList.remove("showMenuElement");
         });
       }
-      console.log("getAllShowMenuElements", getAllShowMenuElements);
       x.className += " responsive";
     } else {
       x.className = "topnav sticky-nav";

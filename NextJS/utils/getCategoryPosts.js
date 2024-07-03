@@ -3,13 +3,12 @@ export const getCategoryPosts = async (catId, after = null, eventTime = null) =>
   const month = today.getMonth() + 1;
   const year = today.getFullYear();
   let day = today.getDate();
-  console.log("DATE", today, month, year, day)
-
   let dateQuery = "";
+
   if (catId === 5) {
-    
+
     if (eventTime === "future") {
-      day = day-1;
+      day = day - 1;
       dateQuery = "after: { day: $day, month: $month, year: $year }";
     } else if (eventTime === "past") {
       dateQuery = "before: { day: $day, month: $month, year: $year }";
