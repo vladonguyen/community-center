@@ -19,4 +19,14 @@
         height: 150px;
         position: relative;
     }
+    
+}
+
+@media screen and (max-width: 425px) {
+    div.gallery-images {
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+    
 }
