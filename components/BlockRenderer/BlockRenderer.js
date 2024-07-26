@@ -16,6 +16,7 @@ import { LatestPosts } from "components/LatestPosts";
 import { getImage } from "utils/getImage";
 import { ImageRender } from "components/ImageRender";
 import Video from "components/Video/Video";
+import { HtmlBlock } from "components/HtmlBlock";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     if(blocks === null){
@@ -174,6 +175,11 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
               
                     return <Video youtubeUrl={youtubeUrl} />;
                     
+
+            };
+            case "core/html": {
+             
+return <HtmlBlock htmlContent={block.originalContent}/>;
 
             };
 
