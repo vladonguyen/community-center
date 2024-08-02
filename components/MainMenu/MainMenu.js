@@ -91,7 +91,7 @@ export const MainMenu = ({ items = [] }) => {
                     );
                 })}
                 <div className='fb-logo'>
-                    <a href="https://www.facebook.com/chitalishte.alekokonstantinov" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/Alekoplovdiv" target="_blank" rel="noopener noreferrer">
                         <Image src='/img/fb.svg' alt="Facebook icon" width={26} height={26} />
                     </a>
                 </div>
