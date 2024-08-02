@@ -17,6 +17,7 @@ import { getImage } from "utils/getImage";
 import { ImageRender } from "components/ImageRender";
 import Video from "components/Video/Video";
 import { HtmlBlock } from "components/HtmlBlock";
+import { HeadingTitle } from "components/HeadingTitle";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     if(blocks === null){
@@ -92,6 +93,14 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
                     level={block.attributes.level}
                     originalContent={block.dynamicContent}
                     textAlign={block.attributes.textAlign} />
+            };
+            case "core/heading":{
+                return <HeadingTitle
+                    key={block.id}
+                    level={block.attributes.level}
+                    originalContent={block.originalContent}
+                    textAlign={block.attributes.textAlign}
+                    />
             };
             case "acf/propertysearch": {
                 return <PropertySearch key={block.id} />
