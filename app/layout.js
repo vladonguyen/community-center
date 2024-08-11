@@ -4,7 +4,8 @@ import { MainMenu } from 'components/MainMenu';
 import { Footer } from "components/Footer/Footer";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Header } from "components/Header/Header";
-import {GoogleAnalytics} from '@next/third-parties/google'
+import {GoogleAnalytics} from '@next/third-parties/google';
+import { Analytics } from "@vercel/analytics/react"
 
 export default async function RootLayout({ children }) {
     const data = await getMenu("MainMenu", "", "");
@@ -34,5 +35,6 @@ export default async function RootLayout({ children }) {
 
             </body>
             <GoogleAnalytics gaId="G-7DZWNN41HX" />
+            <Analytics/>
         </html>);
 }
