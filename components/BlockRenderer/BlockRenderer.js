@@ -18,6 +18,7 @@ import { ImageRender } from "components/ImageRender";
 import Video from "components/Video/Video";
 import { HtmlBlock } from "components/HtmlBlock";
 import { HeadingTitle } from "components/HeadingTitle";
+import { ListItem } from "components/ListItem";
 
 export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
     if(blocks === null){
@@ -191,6 +192,25 @@ export const BlockRenderer = ({ blocks = [], propertyFeaturesProps = {} }) => {
 return <HtmlBlock htmlContent={block.originalContent}/>;
 
             };
+            case "core/list": {
+                return (
+                    <ul key={block.id} className={block.attributes.ordered ? 'ordered-list' : 'unordered-list'}>
+                        <BlockRenderer blocks={block.innerBlocks} propertyFeaturesProps={propertyFeaturesProps} />
+                    </ul>
+                );
+            };
+            
+            case "core/list-item": {
+                return (
+                  
+                    <ListItem 
+                        key={block.id}
+                        originalContent={block.originalContent} 
+                        dynamicContent={block.dynamicContent } 
+                    />
+                );
+            };
+            
 
             default:
                 console.log("UNKNOWN: ", block);

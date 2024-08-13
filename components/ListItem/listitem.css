@@ -1,0 +1,28 @@
+ul.unordered-list {
+    list-style: none; 
+    padding-left: 0; 
+    padding-bottom: 1rem;
+}
+
+ul.unordered-list li {
+    position: relative; /* Needed for positioning pseudo-element */
+    margin-left: 2rem; /* Adjust as needed */
+    padding-left: 2rem; /* Add space for custom marker */
+}
+
+ul.unordered-list li::before {
+    content: '\2022'; /* Unicode for bullet (•) */
+    font-size: 1.5rem; /* Adjust size */
+    position: absolute;
+    left: 0; /* Position the marker */
+    top: 0; /* Align marker vertically */
+}
+ul.ordered-list {
+    padding-bottom: 1rem;
+}
+
+
+ul.ordered-list li {
+    margin-left: 3rem; 
+    list-style-type: decimal;
+}
