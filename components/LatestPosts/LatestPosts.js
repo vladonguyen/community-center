@@ -15,7 +15,7 @@ export const LatestPosts = ({ dynamicContent }) => {
                 <article key={index} className="news-events">
                     <div className="two-columns">
                         <div className="thumb-image">
-                        <Link href={item.href}>   <Image src={item.image} alt={item.altText} width={150} height={150}/></Link>
+                        <Link href={item.href}>   <Image src={item.image || "https://chitalishte.ecovege.org/wp-content/uploads/2024/11/noimage.jpg"} alt={item.altText} width={150} height={150}/></Link>
                         </div>
                         <div className="news-content">
                             <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>

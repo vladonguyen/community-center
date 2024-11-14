@@ -24,7 +24,12 @@ export const CategoryPage = ({ categoryPosts }) => {
                         <Link href={`/${post.node.slug}`}>
 
                             <div key={index} className="newsImgBox">
-                                <Image src={post.node.featuredImage.node.sourceUrl} alt={post.node.featuredImage.node.altText} width="250" height="250" />
+                            <Image 
+    src={post?.node?.featuredImage?.node?.sourceUrl || "https://chitalishte.ecovege.org/wp-content/uploads/2024/11/noimage.jpg"} 
+    alt={post?.node?.featuredImage?.node?.altText || "Default alt text"} 
+    width="250" 
+    height="250" 
+/>
                             </div>
                             <div className="text-date">
                                 <p className="cat-date">
